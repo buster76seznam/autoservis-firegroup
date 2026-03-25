@@ -106,6 +106,17 @@
         display:inline-block;background:#fef3c7;border:1px solid #f59e0b;color:#92400e;
         padding:.35rem .6rem;border-radius:.5rem;font-weight:700
       }
+      .form-group{margin-bottom:1rem}
+      .form-group label{display:block;margin-bottom:.3rem;font-weight:600;font-size:.9rem}
+      .form-group input, .form-group textarea{
+        width:100%;padding:.6rem;border-radius:.5rem;border:1px solid #e2e8f0;
+        font-family:inherit;font-size:1rem;background:#f8fafc
+      }
+      .form-group textarea{resize:vertical;min-height:100px}
+      .form-group input:focus, .form-group textarea:focus{
+        outline:none;border-color:#ff4f1f;box-shadow:0 0 0 3px rgb(255 79 31 / .1)
+      }
+      .privacy-notice{font-size:.75rem;color:#64748b;margin-top:1.5rem;line-height:1.4}
       @media (min-width:768px){
         .card.split{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem;align-items:center}
       }
@@ -140,7 +151,7 @@
             <p>Spolehlivý autoservis v Šenov u Nového Jičína. Rychlé termíny, férový přístup a kvalitní práce.</p>
             <div class="cta" style="margin-top:1rem">
               <a class="btn" href="tel:+420730191557">Zavolat</a>
-              <a class="btn outline" href="mailto:autoservis@firegroup.cz">Napsat e‑mail</a>
+              <a class="btn outline" href="#kontakt-form">Napsat e‑mail</a>
             </div>
           </div>
         </section>
@@ -179,6 +190,37 @@
               <div><strong>Adresa:</strong> 742 42 Šenov u Nového Jičína, Česko</div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="kontakt-form" class="section">
+        <div class="card">
+          <h3>Napište nám</h3>
+          <p class="muted" style="margin-bottom:1.5rem">Máte dotaz? Pošlete nám zprávu a my se vám ozveme co nejdříve.</p>
+          <form action="https://formspree.io/f/autoservis@firegroup.cz" method="POST">
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+              <div class="form-group">
+                <label for="name">Jméno a příjmení</label>
+                <input type="text" id="name" name="name" placeholder="Vaše jméno" required>
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="_replyto" placeholder="vas@email.cz" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefon (volitelně)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+420 ...">
+            </div>
+            <div class="form-group">
+              <label for="message">Zpráva</label>
+              <textarea id="message" name="message" placeholder="Jak vám můžeme pomoci?" required></textarea>
+            </div>
+            <button type="submit" class="btn" style="width: 100%; justify-content: center;">Odeslat zprávu</button>
+            <p class="privacy-notice">
+              Odesláním formuláře souhlasíte se zpracováním osobních údajů pro účely vyřízení vašeho dotazu. Vaše údaje (jméno, e-mail, telefon) budou použity pouze pro komunikaci s vámi a nebudou předávány třetím stranám.
+            </p>
+          </form>
         </div>
       </section>
 
